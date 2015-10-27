@@ -3,39 +3,21 @@
     <div class="list card">
       <div class="item item-divider">Beleg</div>
       <div class="item item-body">
-        <div>
-          <ul class="list">
+        <ion-list>
+          <ion-item  ng-repeat="item in items" type="item-text-wrap" >
 
-            <label class="item item-radio">
-               <input type="radio" name="group">
-               <div class="item-content">
-                 <b>Ciabatta of bol</b></br>
-                 Omafd
-               </div>
-               <i class="radio-icon ion-checkmark"></i>
-            </label>
+            <h3>{{item.name}}</h3>
+            <p>{{item.description}}</p>
 
-            <label class="item item-radio">
-               <input type="radio" name="group">
-               <div class="item-content">
-                 <b>Ciabatta of bol</b></br>
-                 Omafd
-               </div>
-               <i class="radio-icon ion-checkmark"></i>
-            </label>
-
-
-          </ul>
-
-
-        </div>
+          </ion-item>
+        </ion-list>
       </div>
     </div>
 
 
-    <button class="button button-full button-positive">
-      Kies je beleg
-    </button>
+    <a  href="#/tab/send" class="button button-full button-positive">
+      Afronden
+    </a>
 
 
   </ion-content>
