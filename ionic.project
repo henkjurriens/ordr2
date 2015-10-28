@@ -1,4 +1,10 @@
 {
-  "name": "ordr2",
-  "app_id": ""
+  "name": "Ordr 2",
+  "app_id": "",
+  "proxies": [
+   {
+     "path": "/api",
+     "proxyUrl": "http://triventobroodjesapp-triventotrial.rhcloud.com/api"
+   }
+ ]
 }
