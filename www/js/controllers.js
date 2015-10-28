@@ -27,7 +27,7 @@ angular.module('starter.controllers', ['ui.router'])
 
     console.log('data :', data.naam);
 
-      $http.post('http://localhost:8100/api/broodjes', data, {}).then(
+      $http.post('https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes', data, {}).then(
        function() {},
        function() {}
       );

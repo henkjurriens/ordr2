@@ -11,6 +11,29 @@ var paths = {
   sass: ['./scss/**/*.scss']
 };
 
+var replace = require('replace');
+var replaceFiles = ['./www/js/controllers.js'];
+
+gulp.task('add-proxy', function() {
+  return replace({
+    regex: "https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes",
+    replacement: "http://localhost:8100/api/broodjes",
+    paths: replaceFiles,
+    recursive: false,
+    silent: false,
+  });
+})
+
+gulp.task('remove-proxy', function() {
+  return replace({
+    regex: "http://localhost:8100/api/broodjes",
+    replacement: "https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes",
+    paths: replaceFiles,
+    recursive: false,
+    silent: false,
+  });
+})
+
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
