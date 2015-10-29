@@ -5,7 +5,12 @@
   background-color: white;
   line-height: 1.1;
   padding : 5px !important;
-  border-color: #fff !important
+
+  border-top : 0;
+}
+
+p {
+  margin : 15px;
 }
 
 .button-spreads h3 {
@@ -19,4 +24,24 @@
 
 .check {
   float : left;
+}
+
+
+.bar-stable {
+  background-color : green !important;
+
+}
+
+.title {
+  color : white !important;
+}
+
+.item-divider, .back-button {
+  background-color : green !important;
+  color : white !important;
+}
+
+.button-positive {
+  background-color: darkred !important;
+  border : 0
 }

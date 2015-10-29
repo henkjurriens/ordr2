@@ -5,17 +5,26 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var items = [
-    {"name" : "Club gezond",
-       "description" : "kaas, ham, ei, tomaat, komkommer, ijsbergslaen en remouladesaus"
+    {  "id" : "1",
+       "name" : "Club gezond",
+       "description" : "kaas, ham, ei, tomaat, komkommer, ijsbergslaen en remouladesaus",
+       "price" : "5,00"
      },
-     { "name" : "Chicken BLT",
-       "description" : "kipfilet, bacon, tomaat, komkommer, rucola en pestosause"
+     { "id" : "2",
+       "name" : "Chicken BLT",
+       "description" : "kipfilet, bacon, tomaat, komkommer, rucola en pestosause",
+       "price" : "4,50"
      },
-     { "name" : "Bacon en Egg",
-       "description" : "bacon, ei, eiersalade, ijsbergsla, en mosterdsaus"
+     {
+       "id" : "3",
+       "name" : "Bacon en Egg",
+       "description" : "bacon, ei, eiersalade, ijsbergsla, en mosterdsaus",
+       "price" : "4,00"
      },
-     { "name" : "Brie Bacon (BBLT)",
-       "description" : "brie, bacon, tomaat, ijsbergsla en mosterdsaus"
+     { "id" : "4",
+       "name" : "Brie Bacon (BBLT)",
+       "description" : "brie, bacon, tomaat, ijsbergsla en mosterdsaus",
+       "price" : "4,00"
      }
 
    ];
@@ -30,6 +39,14 @@ angular.module('starter.services', [])
     get: function(itemId) {
       for (var i = 0; i < items.length; i++) {
         if (items[i].id === parseInt(itemId)) {
+          return  items[i];
+        }
+      }
+      return null;
+    },
+    getByName: function(name) {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].name === name) {
           return  items[i];
         }
       }

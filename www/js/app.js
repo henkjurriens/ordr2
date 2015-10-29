@@ -65,6 +65,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-order': {
         templateUrl: 'templates/tab-send.html',
+        controller: 'OrderCtrl'
+      }
+    }
+  })
+
+  .state('tab.order-thanks', {
+    url: '/thanks',
+    views: {
+      'tab-order': {
+        templateUrl: 'templates/tab-thanks.html',
+        controller: 'OrderCtrl'
+      }
+    }
+  })
+
+  .state('tab.order-list', {
+    url: '/list',
+    views: {
+      'tab-list': {
+        templateUrl: 'templates/tab-orderlist.html',
         controller: 'DashCtrl'
       }
     }
@@ -78,17 +98,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'DashCtrl'
         }
       }
-  })
-
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
   });
 
   // if none of the above states are matched, use this as the fallback

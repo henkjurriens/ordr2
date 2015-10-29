@@ -1,22 +1,25 @@
 <ion-view view-title="Afronden">
   <ion-content class="padding">
-
-<!--
     <div class="card">
-      <b>Bestelling</b>
+      <div class="item item-divider">
+         Bestelling
+      </div>
+
+      <p>Je hebt het volgende besteld : {{getSandwich()}} + {{getSpread()}} (&euro; {{getPrice()}})</p>
     </div>
--->
+
 
     <div class="list">
       <label class="item item-input">
-        <input type="text" placeholder="Naam">
+        <input type="text" placeholder="Naam" ng-model="name">
+
       </label>
       <label class="item item-input">
-        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Email"  ng-model="email">
       </label>
     </div>
 
-    <button class="button button-full button-positive">
+    <button  ng-click="send(name, email)" class="button button-full button-positive">
       Vesturen
     </button>
 

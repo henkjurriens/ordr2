@@ -13,7 +13,10 @@
               <h3>{{item.name}}</h3>
               <p>{{item.description}}</p>
             </div>
-            <div  class="col"
+            <div  class="col" >
+              &euro; {{item.price}}
+            </div>
+            <div  class="col" >
               <span ng-show="isSpread(item.name)">
                 <span  class="ion-checkmark-round"></span>
               </span>
