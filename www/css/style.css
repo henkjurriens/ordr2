@@ -1,1 +1,22 @@
 /* Empty. Add your own CSS if you like */
+
+.button-spreads {
+  text-align: left;
+  background-color: white;
+  line-height: 1.1;
+  padding : 5px !important;
+  border-color: #fff !important
+}
+
+.button-spreads h3 {
+   margin-bottom: 0 !important;
+   margin-top: 0 !important
+}
+
+.button-spreads p {
+   margin-top: 3px !important
+}
+
+.check {
+  float : left;
+}

@@ -55,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-order': {
         templateUrl: 'templates/tab-spreads.html',
-        controller: 'DashCtrl'
+        controller: 'OrderCtrl'
       }
     }
   })

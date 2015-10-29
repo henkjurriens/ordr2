@@ -4,18 +4,34 @@ angular.module('starter.controllers', ['ui.router'])
   $scope.items = Menu.all();
 })
 
-.controller('OrderCtrl',  function($scope, $state, $http) {
-
+.controller('OrderCtrl',  function($scope, $state, $http, Menu) {
+  $scope.items = Menu.all();
   $scope.sandwich = '';
   $scope.setSandwich = function(sandwich) {
     $scope.sandwich = sandwich;
     console.log('sandwich : ' + sandwich);
     localStorage.setItem("sandwich", sandwich);
-    $scope.send();
 
     $state.go('tab.order-spreads')
   }
 
+
+  $scope.setSpread = function(spread) {
+    $scope.spread = spread;
+    console.log('spread : ' + spread);
+    localStorage.setItem("spread", spread);
+  }
+
+  $scope.isSpread = function(spread) {
+    var selectedSpread = localStorage.getItem("spread");
+    console.log('selected spread : ' + selectedSpread);
+    return selectedSpread === spread;
+  }
+
+  $scope.complete = function() {
+    $state.go('tab.order-send')
+
+  }
 
   $scope.send = function() {
     console.log('send');
@@ -27,7 +43,7 @@ angular.module('starter.controllers', ['ui.router'])
 
     console.log('data :', data.naam);
 
-      $http.post('https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes', data, {}).then(
+      $http.post('http://localhost:8100/api/broodjes', data, {}).then(
        function() {},
        function() {}
       );
