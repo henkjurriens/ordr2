@@ -85,7 +85,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-list': {
         templateUrl: 'templates/tab-orderlist.html',
-        controller: 'DashCtrl'
+        controller: 'OrderListCtrl'
       }
     }
   })

@@ -26,9 +26,12 @@ angular.module('starter.controllers', ['ui.router'])
   $scope.sandwich = '';
 
 
-  $scope.setSandwich = function(sandwich) {
+  $scope.setSandwich = function(sandwich, orderDate) {
+    console.log('orderDate :' + orderDate);
+
     $scope.sandwich = sandwich;
     console.log('sandwich : ' + sandwich);
+    localStorage.setItem("orderDate", orderDate);
     localStorage.setItem("sandwich", sandwich);
 
     $state.go('tab.order-spreads')
@@ -73,16 +76,16 @@ angular.module('starter.controllers', ['ui.router'])
     console.log('broodje :'  + $scope.getSandwich());
     localStorage.setItem("name", name);
     localStorage.setItem("email", email);
-    
-    var data = {  'naam' : name,
+
+
+    var data = {  'gebruiker' : name,
                   'broodje': $scope.getSandwich(),
                   'beleg':  $scope.getSpread(),
                   'prijs' : $scope.getPrice(),
-                  'bestelDatum': '06-11-2015'
+                  'bestelDatum': localStorage.getItem("orderDate")
                 }
 
-    console.log('data :', data.naam);
-    $http.post('https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes', data, {}).then(
+    $http.post('http://localhost:8100/api/broodjes', data, {}).then(
      function() {
 
      },
@@ -95,6 +98,25 @@ angular.module('starter.controllers', ['ui.router'])
 
 })
 
+.controller('OrderListCtrl', function($scope, $http) {
+
+    $scope.getList = function() {
+      $http({
+        method: 'GET',
+        url: 'http://localhost:8100/api/itemsAggregate'
+      }).then(function successCallback(response) {
+        $scope.orderList = response;
+        console.log("list " + $scope.orderList);
+
+
+      }, function errorCallback(response) {
+        console.log("error");
+      });
+    }
+
+    $scope.getList();
+
+})
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {

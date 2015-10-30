@@ -25,13 +25,22 @@ gulp.task('add-proxy', function() {
 })
 
 gulp.task('remove-proxy', function() {
-  return replace({
-    regex: "http://localhost:8100/api/broodjes",
-    replacement: "https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes",
-    paths: replaceFiles,
-    recursive: false,
-    silent: false,
-  });
+  return
+
+    replace({
+      regex: "http://localhost:8100/api/itemsAggregate",
+      replacement: "http://triventobroodjesapp-triventotrial.rhcloud.com/api/itemsAggregate",
+      paths: replaceFiles,
+      recursive: false,
+      silent: false,
+    });
+    replace({
+      regex: "http://localhost:8100/api/broodjes",
+      replacement: "https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes",
+      paths: replaceFiles,
+      recursive: false,
+      silent: false,
+    });
 })
 
 gulp.task('default', ['sass']);

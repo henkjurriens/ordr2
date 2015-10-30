@@ -1,15 +1,33 @@
 <ion-view view-title="Bestellen">
   <ion-content class="padding">
+    <div class="card">
+      <div class="item item-divider">Bestelling</div>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Bestelling voor :
+        </div>
+        <select ng-model="orderDate">
+          <option>30-10-2015</option>
+          <option>06-11-2015</option>
+          <option>13-11-2015</option>
+          <option>20-11-2015</option>
+          <option>27-11-2015</option>
+        </select>
+
+      </label>
+
+    </div>
     <div class="list card">
+
       <div class="item item-divider">Vers belegde broodjes</div>
       <div class="item item-body">
         <div>
           <h2>Kies uw broodje</h2>
-           <button ng-click="setSandwich('ciabatta-wit')" class="button button-full button-positive">Ciabatta (wit)</button>
-           <button ng-click="setSandwich('ciabatta-bruin')" class="button button-full button-positive">Ciabatta (bruin)</button>
-           <button ng-click="setSandwich('baquette-wit')" class="button button-full button-positive">Baquette (wit)</button>
-           <button ng-click="setSandwich('baquette-bruin')" class="button button-full button-positive">Baquette (bruin)</button>
-           <button ng-click="setSandwich('speltbol')" class="button button-full button-positive">Speltbol</button>
+           <button ng-click="setSandwich('ciabatta-wit', orderDate)" class="button button-full button-positive">Ciabatta (wit)</button>
+           <button ng-click="setSandwich('ciabatta-bruin', orderDate)" class="button button-full button-positive">Ciabatta (bruin)</button>
+           <button ng-click="setSandwich('baquette-wit', orderDate)" class="button button-full button-positive">Baquette (wit)</button>
+           <button ng-click="setSandwich('baquette-bruin', orderDate)" class="button button-full button-positive">Baquette (bruin)</button>
+           <button ng-click="setSandwich('speltbol', orderDate)" class="button button-full button-positive">Speltbol</button>
         </div>
       </div>
     </div>
