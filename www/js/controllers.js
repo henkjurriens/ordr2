@@ -85,7 +85,7 @@ angular.module('starter.controllers', ['ui.router'])
                   'bestelDatum': localStorage.getItem("orderDate")
                 }
 
-    $http.post('http://localhost:8100/api/broodjes', data, {}).then(
+    $http.post('https://triventobroodjesapp-triventotrial.rhcloud.com/api/broodjes', data, {}).then(
      function() {
 
      },
@@ -103,7 +103,7 @@ angular.module('starter.controllers', ['ui.router'])
     $scope.getList = function() {
       $http({
         method: 'GET',
-        url: 'http://localhost:8100/api/itemsAggregate'
+        url: 'https://triventobroodjesapp-triventotrial.rhcloud.com/api/itemsAggregate'
       }).then(function successCallback(response) {
         $scope.orderList = response;
         console.log("list " + $scope.orderList);

@@ -9,13 +9,11 @@
           <button  ng-repeat="item in items" ng-click="setSpread(item.name)" class="button button-full button-spreads">
 
             <div class="row">
-            <div style="col-75" >
-              <h3>{{item.name}}</h3>
+            <div style="col" >
+              <h3>{{item.name}}, &euro; {{item.price}}</h3>
               <p>{{item.description}}</p>
             </div>
-            <div  class="col" >
-              &euro; {{item.price}}
-            </div>
+            
             <div  class="col" >
               <span ng-show="isSpread(item.name)">
                 <span  class="ion-checkmark-round"></span>
